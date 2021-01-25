@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::post('/contacts', [MainController::class, 'getContacts']);
 Route::get('/reviews', [ReviewController::class, 'reviews']);
 Route::post('/reviews', [ReviewController::class, 'reviewForm']);
 Route::get('/sale', [StoreController::class, 'sale']);
+Route::get('/news', [NewsController::class, 'news']);
