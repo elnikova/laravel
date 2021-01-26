@@ -9,7 +9,8 @@ class ReviewController extends Controller
 {
     public function reviews(){
         $title = 'Review';
-        $reviews = Review::all();
+        $reviews = Review::orderBy('created_at', 'desc')->paginate(5);
+        
         return view('main.reviews', compact('title', 'reviews'));
     }
 
@@ -20,9 +21,11 @@ class ReviewController extends Controller
             'review' => 'required|min:3',
         ]);
 
-       //dd($request->all());
-       //отправляем письмо
-       //return redirect('/contacts')->with('success', 'Thank!');
+        $review = new Review();
+        $review->name = $request->name;
+        $review->review = $request->review;
+        $review->save();
+      
        return back()->with('success', 'Thanks for your review!');
     }
     
