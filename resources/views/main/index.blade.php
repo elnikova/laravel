@@ -7,12 +7,13 @@
 
     <h1>{{$title}} {!! $subtitle !!}</h1>
 
-    {{-- @foreach ($categories as $category)
+    @foreach ($categories as $category)
+        <img src="/images/{{$category->img}}" alt="{{$category->name}}">
         <p> {{$category->name}} </p>
-    @endforeach --}}
+    @endforeach 
 
 
-    {{-- @foreach ($products as $product)
+    {{-- {{-- @foreach ($products as $product)
         <p> {{$loop->iteration}} {{$product}} </p>
     @endforeach --}}
 

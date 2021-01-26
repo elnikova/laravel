@@ -8,11 +8,11 @@
     @foreach ($news as $key)
         <div class="border p-3 m-3">
             <h3>{{$key->title}}</h3><br>
-            {{$key->created_at}}<br>
-            <img src="{{$key->img}}" alt="{{$key->title}}">
-            <p>{{$key->short_content}}</p>
-            <p><a class="btn btn-secondary" href="#" role="button">Читать далее »</a></p>
-        </div>
+            <p><i class="far fa-calendar-alt"></i>{{$key->created_at}}<br></p>
+            <img src="/images/{{$key->img}}" alt="{{$key->title}}">
+            <p>{{$key->short_content}} <a class="btn btn-secondary" href="show" role="button">Читать далее »</a>
+            </p>
+        </div>        
         <hr>
     @endforeach
 

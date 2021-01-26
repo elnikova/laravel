@@ -33,7 +33,7 @@
     @forelse ($reviews as $review)
         <div class="border p-3 m-3">
             <h2>{{$review->name}}</h2>
-            <p>{{$review->created_at}}</p>
+            <p><i class="far fa-calendar-alt"></i>{{$review->created_at}}</p>
             <hr>
             <blockquote>{{$review->review}}</blockquote>
         </div>
