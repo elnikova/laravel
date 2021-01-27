@@ -10,10 +10,11 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid">
                     <div class="product-image">
-                        <a href="#">
+                        <a href="#" class="image">
                             <img class="pic-1" src="{{$product->img}}">
                         </a>
-                        <span class="product-trend-label">Sale</span>
+                        <span class="product-sale-label">Sale</span>
+                        <span class="product-discount-label">-20%</span>
                         <ul class="social">
                             <li><a href="#" data-tip="Add to Cart"><i class="fas fa-shopping-cart"></i></a></li>
                             <li><a href="#" data-tip="Wishlist"><i class="far fa-heart"></i></a></li>
@@ -23,7 +24,7 @@
                     </div>
                     <div class="product-content">
                         <h3 class="title"><a href="#">{{$product->name}}</a></h3>
-                        <div class="price">{{$product->price}}$</div>
+                        <div class="price discount"><span>{{$product->price}}$</span> ${{$product->action_price}}</div>
                         <ul class="rating">
                             <li class="fas fa-star"></li>
                             <li class="fas fa-star"></li>
@@ -36,6 +37,8 @@
                         </a>
                     </div>
                 </div>
+                    
+                
             </div>
             @endforeach
         </div>
