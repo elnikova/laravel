@@ -30,4 +30,3 @@ Route::get('/reviews', [ReviewController::class, 'reviews']);
 Route::post('/reviews', [ReviewController::class, 'reviewForm']);
 Route::get('/sale', [StoreController::class, 'sale']);
 Route::get('/news', [NewsController::class, 'news']);
-Route::get('/show', [NewsController::class, 'show']);

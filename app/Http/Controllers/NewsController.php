@@ -14,11 +14,6 @@ class NewsController extends Controller
         return view('main.news', compact('title', 'news'));
     }
 
-    public function show(Request $request)
-    {
-        //var_dump($request);
-        
-        return view('main.show');
-    }
+    
 
 }
