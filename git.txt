@@ -1,0 +1,46 @@
+Глобальные данные 1 раз в самом начале
+$ git config --global user.name "Dariya Elnikova"
+$ git config --global user.email "elnikova.dariya@gmail.com"
+
+инициализация git
+$ git init
+
+Статус
+$ git status
+
+Добавляет файл и папкe в проекте в git
+$ git add index.php
+
+Добавляет все файлы и папки в проекте в git
+$ git add .
+
+Коммит (Фиксация изменений)
+$ git commit -m "First commit"
+
+Логи(все коммиты)
+$ git log
+$ git log --pretty=oneline
+
+Добавление ветки
+$ git branch dz
+$ git checkout dz -переход в ветку 
+
+$ git checkout -b dz - создаст и перейдет в новую ветку 
+
+Объединить ветки
+ git merge dz (находились в ветке мастер)
+
+Удалить ветку
+ git branch -D dz
+
+
+
+
+
+************************************
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/elnikova/project-mvc.git
+git push -u origin main
