@@ -13,10 +13,10 @@ class MainController extends Controller
         $title = 'Welcome';
         $subtitle = '<em>to store</em>';
         $products = Product::all();
-        $categories = Category::all();
+        //$categories = Category::all();
         //dump($products);
         //dd($categories);
-        return view('main.index', compact('title', 'products', 'subtitle', 'products', 'categories'));
+        return view('main.index', compact('title', 'products', 'subtitle', 'products'));
     }
 
     public function contacts()
