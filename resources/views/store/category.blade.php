@@ -1,8 +1,11 @@
 @extends('layouts.main')
-
+{{-- @section('css')
+    //<link rel="stylesheet" href="css/style.css">
+@endsection --}}
 
 @section('content')
-    <h1>Sale</h1>
+
+    <h1>{{$category->name}}</h1>
 
     <div class="container">
         <div class="row">
@@ -11,14 +14,9 @@
             @endforeach
         </div>
     </div>
-    
-    
 
-
-
-
-    {{$products->links()}}
-    
 @endsection
 
-@section('title', $title)
+
+
+@section('title', $category->name)

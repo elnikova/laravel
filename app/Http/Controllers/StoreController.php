@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class StoreController extends Controller
 {
@@ -16,5 +17,13 @@ class StoreController extends Controller
         //$products = Product::where('recommended', '=', 1)->simplePaginate(5);
         //dd($products);
         return view('store.sale', compact('title', 'products'));
+    }
+
+    public function category($slug)
+    {
+        $category = Category::where('slug', '=', $slug)->firstOrFail(); // если равно то можно не писать
+        $products = Product::where('category_id', '=', $category->id)->paginate(5);
+        
+        return view('store.category', compact('category', 'products'));
     }
 }

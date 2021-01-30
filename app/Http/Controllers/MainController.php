@@ -12,10 +12,10 @@ class MainController extends Controller
     {
         $title = 'Welcome';
         $subtitle = '<em>to store</em>';
-        $products = Product::all();
+        $products = Product::with('category')->get();//название метода в моделе
         //$categories = Category::all();
         //dump($products);
-        //dd($categories);
+        //dd($products[0]);
         return view('main.index', compact('title', 'products', 'subtitle', 'products'));
     }
 
