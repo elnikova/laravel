@@ -26,16 +26,17 @@
     left: 0px;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 15% 75%, 0 100%, 0 25%);
 }
-.product-image .product-discount-label{
-    content: "";
-    color: #fff;
-    background-color: #e74c3c;
-    font-size: 12px;
-    line-height: 28px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 0 7px;
+// .product-image .product-discount-label
+.product-image .product-reviews{
+    //content: "";
+    //color: #fff;
+    //background-color: #e74c3c;
+    //font-size: 12px;
+    //line-height: 28px;
+    //font-weight: 700;
+    //text-align: center;
+    //text-transform: uppercase;
+    //padding: 0 7px;
     position: absolute;
     top: 0px;
     left: 12px;
@@ -119,7 +120,9 @@
     margin: 0;
     list-style: none;
     display: inline-block;
-    //float: right;
+    
+    background-color: yellow;
+    background-size: 80%;
     li{
         color: #ffc500;
         font-size: 13px;

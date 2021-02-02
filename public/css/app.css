@@ -10004,10 +10004,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
-img {
-  max-width: 100%;
-}
-
 .product-grid {
   font-family: "Open Sens", sans-serif;
   text-align: center;
@@ -10046,16 +10042,7 @@ img {
           clip-path: polygon(0 0, 100% 0, 100% 75%, 15% 75%, 0 100%, 0 25%);
 }
 
-.product-image .product-discount-label {
-  content: "";
-  color: #fff;
-  background-color: #e74c3c;
-  font-size: 12px;
-  line-height: 28px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0 7px;
+.product-image .product-reviews {
   position: absolute;
   top: 0px;
   left: 12px;
@@ -10160,6 +10147,8 @@ img {
   margin: 0;
   list-style: none;
   display: inline-block;
+  background-color: yellow;
+  background-size: 80%;
 }
 .product-grid .rating li {
   color: #ffc500;
