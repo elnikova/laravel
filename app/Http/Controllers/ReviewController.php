@@ -20,11 +20,16 @@ class ReviewController extends Controller
             'name' => 'required|min:3|max:255',
             'review' => 'required|min:3',
         ]);
-
+    
         $review = new Review();
         $review->name = $request->name;
         $review->review = $request->review;
+        if($_POST['product_id']){
+            $review->product_id = $request->product_id;
+            $review->save();
+        }
         $review->save();
+        
       
        return back()->with('success', 'Thanks for your review!');
     }
