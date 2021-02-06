@@ -3,7 +3,7 @@
 
 @section('content')
     <h1>Sale</h1>
-    {{count($reviews)}}
+    
     <div class="container">
         <div class="row">
             @foreach ($products as $product)
@@ -12,11 +12,6 @@
         </div>
     </div>
     
-    
-
-
-
-
     {{$products->links()}}
     
 @endsection

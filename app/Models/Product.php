@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Scopes\ProductScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    protected static function booted()
+    {
+        static::addGlobalScope(new ProductScope);
+    }
 
     public function getImgAttribute($value)
     {
@@ -23,6 +29,16 @@ class Product extends Model
     public function reviews()
     {
         return  $this->hasMany(Review::class);
+    }
+
+    public function scopeRecommended($query)
+    {
+        $query->where('recommended', 1);
+    }
+
+    public function scopeLatest($query)
+    {
+        $query->orderByDesc('created_at');
     }
 
 

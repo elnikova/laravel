@@ -44,3 +44,15 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/elnikova/project-mvc.git
 git push -u origin main
+
+
+
+
+****************************************************************************************
+
+composer require laravelcollective/html
+
+ composer require unisharp/laravel-filemanager
+ php artisan vendor:publish --tag=lfm_config
+ php artisan vendor:publish --tag=lfm_public
+ php artisan storage:link

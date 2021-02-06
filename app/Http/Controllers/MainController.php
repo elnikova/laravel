@@ -12,7 +12,7 @@ class MainController extends Controller
     {
         $title = 'Welcome';
         $subtitle = '<em>to store</em>';
-        $products = Product::with('category')->get();//название метода в моделе
+        $products = Product::with('category')->latest()->get();//название метода в моделе
         //$categories = Category::all();
         //dump($products);
         //dd($products[0]);

@@ -4,14 +4,14 @@
         <div class="product-image">
             
             <a href="/product/{{$product->slug}}" class="image">
-                <img class="pic-1" src="{{$product->img}}">
+                <img class="pic-1" src="images/product_16.jpg">
             </a>
             {{-- @if ({{product->}})
                 
             @endif --}}
             <a class="product-reviews" data-toggle="dropdown" href="/product/{{$product->slug}}">
                 <i class="far fa-comment"></i>
-                <span class="badge badge-secondary badge-pill"></span>
+                <span class="badge badge-secondary badge-pill">{{$product->reviews_count}}</span>
             </a>
             {{-- <span class="product-sale-label">Sale</span>
             <span class="product-discount-label">-20%</span> --}}

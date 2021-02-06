@@ -9,8 +9,17 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'description', 'slug', 'img'];
+
     public function products()
     {
         return $this->hasMany(Product::class);
     }
+
+    public function getImgAttribute($value)
+    {
+        return $value ? $value : '/images/noimage.png';
+    }
+
+    
 }
