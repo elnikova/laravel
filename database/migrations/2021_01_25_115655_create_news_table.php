@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->text('short_content');
             $table->text('content');
             $table->string('img')->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('slug')->unique();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');

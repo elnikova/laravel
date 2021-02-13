@@ -20,12 +20,18 @@
                 <td>{{$loop->iteration}}</td>
                 <td><img style="width: 100px" src="{{asset($item->img)}}" alt=""></td>
                 <td>{{$item->name}}</td>
-                <td><a href="/admin/category/"><i class="fas fa-pencil-alt"></a></i><a href=""><i class="fas fa-trash-alt"></i></a></td>
+                <td>
+                    <a href="/admin/category/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a>
+                    {!! Form::open(['url' => '/admin/category/'.$item->id, 'method' => 'DELETE']) !!}
+                        <button><i class="fas fa-trash-alt"></i></button>
+                    {!! Form::close() !!}
+                </td>
             </tr>
             @endforeach
             
         </tbody>
     </table>
+    
     @section('js')
         <script>
             $(document).ready( function () {

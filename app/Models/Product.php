@@ -11,6 +11,8 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'category_id', 'price', 'action_price', 'slug', 'recommended', 'description', 'img'];
+
     protected static function booted()
     {
         static::addGlobalScope(new ProductScope);
