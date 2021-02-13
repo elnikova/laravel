@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Permission;
 use App\Models\Product;
+use App\Models\Role;
+use App\Models\User;
 
 class MainController extends Controller
 {
@@ -13,9 +16,7 @@ class MainController extends Controller
         $title = 'Welcome';
         $subtitle = '<em>to store</em>';
         $products = Product::with('category')->latest()->get();//название метода в моделе
-        //$categories = Category::all();
-        //dump($products);
-        //dd($products[0]);
+    
         return view('main.index', compact('title', 'products', 'subtitle', 'products'));
     }
 

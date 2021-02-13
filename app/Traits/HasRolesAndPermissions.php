@@ -4,7 +4,7 @@ namespace App\Traits;
 use App\Models\Permission;
 use App\Models\Role;
 
-trait HasRolesAndPermission{
+trait HasRolesAndPermissions{
 
     public function roles()
     {
@@ -19,5 +19,10 @@ trait HasRolesAndPermission{
     public function hasRole($role)
     {
         return $this->roles->contains('slug', $role); //сначала указываем что ищем а потом где, так как коллекция многомерная
+    }
+
+    public function hasPermission($permission)
+    {
+        return $this->permissions->contains('slug', $permission);
     }
 }

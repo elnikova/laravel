@@ -7,7 +7,15 @@
 
     <div class="container">
         <img src="{{$product->img}}" alt="{{$product->name}}">
-        <p>{{$product->description}}</p>
+        <p>{!!$product->description!!}</p>
+
+        <form action="" class="form-add-to-cart">
+            <input style="width: 20%" type="number" name="qty" class="form-control" value="1">
+            <input type="hidden" name="product_id" value="{{$product->id}}">
+            <button class="add-to-cart">
+              <i class="fas fa-shopping-cart"></i><span>ADD TO CART</span>
+            </button>
+        </form>
     </div>
     <hr>
     <h4>Product reviews</h4>
