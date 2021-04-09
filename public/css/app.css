@@ -10004,6 +10004,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.container {
+  min-height: 100vh;
+}
+
 body {
   background-image: url(/images/bg.jpg);
   background-repeat: no-repeat;
@@ -10054,15 +10058,38 @@ a {
   text-align: center;
   z-index: 100;
 }
-.navbar .name {
-  font-size: 2em;
-  text-decoration: none;
-  margin-right: 5%;
+.navbar .m {
+  padding-right: 3.5rem !important;
+  font-weight: bolder;
+  font-size: 1.5em;
 }
 
 main {
   margin-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 230px;
+}
+
+.logo {
+  background-color: rgba(216, 92, 216, 0.33);
+  color: purple;
+  vertical-align: top;
+  position: absolute;
+  width: 54%;
+  z-index: 1001;
+  top: 250px;
+  right: 30px;
+  font-size: 5em;
+  font-weight: bolder;
+  padding-left: 2%;
+}
+
+.about {
+  margin: 2%;
+  padding: 2%;
+  font-size: 1.25em;
+  font-weight: bolder;
+  background-color: rgba(199, 145, 199, 0.33);
+  border-radius: 10px;
 }
 
 .form {
@@ -10161,4 +10188,11 @@ footer {
   background-color: rgba(128, 0, 128, 0.25);
   color: purple;
   width: 100%;
+  margin-top: 3%;
+  padding-top: 2%;
+  padding-left: 4%;
+}
+footer .item {
+  display: flex;
+  justify-content: start;
 }

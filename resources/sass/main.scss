@@ -1,3 +1,7 @@
+.container{
+   min-height: 100vh;
+}
+
 body{
    background-image: url(/images/bg.jpg);
    background-repeat: no-repeat;
@@ -47,20 +51,43 @@ a{
    padding-left: 15%;
    text-align: center;
    z-index: 100;
-   .name{
-      font-size: 2em;
-      text-decoration: none;
-      margin-right: 5%;
+   .m{
+      padding-right: 3.5rem !important;
+      font-weight: bolder;
+      font-size: 1.5em;
    }
-   // .active{
-   //    font-weight: bolder;
-   // }
 }
 
 main{
    margin-top: 100px;
-   padding-bottom: 100px;
+   padding-bottom: 230px;
 }
+
+.logo {
+   background-color:  rgb(216, 92, 216, 33%);
+   color:purple;
+   vertical-align: top;
+   position: absolute;
+   width: 54%;
+   z-index: 1001;
+   top: 250px;
+   right: 30px;
+   font-size: 5em;
+   font-weight: bolder;
+   padding-left: 2%;
+}
+
+.about{
+   margin: 2%;
+   padding: 2%;
+   font-size: 1.25em;
+   font-weight: bolder;
+   background-color: rgb(199, 145, 199, 33%);
+   border-radius: 10px;
+
+}
+
+
 
 
 
