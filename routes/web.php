@@ -3,12 +3,11 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StoreController;
-use App\Http\Controllers\NewsController;
+//use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -31,15 +30,14 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [MainController::class, 'index']);
 Route::get('/contacts', [MainController::class, 'contacts']);//->middleware('auth'); //посредник, вызываеться перед контроллером
 Route::post('/contacts', [MainController::class, 'getContacts']);
+Route::get('/info', [MainController::class, 'info']);
 Route::get('/reviews', [ReviewController::class, 'reviews']);
 Route::post('/reviews', [ReviewController::class, 'reviewForm']);
-Route::get('/sale', [StoreController::class, 'sale']);
-Route::get('/news', [NewsController::class, 'news']);
+Route::get('/store', [MainController::class, 'store']);
+//Route::get('/news', [NewsController::class, 'news']);
 Route::get('/category/{slug}', [StoreController::class, 'category']);
 Route::get('/product/{product:slug}', [StoreController::class, 'product']);
 
-
-Route::post('/cart/add', [CartController::class, 'add']);
 
 Auth::routes();
 
@@ -50,8 +48,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function(){
 });
 
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+//Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//    \UniSharp\LaravelFilemanager\Lfm::routes();
+//});
 
 

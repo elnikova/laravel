@@ -26,24 +26,6 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('price', 'Product price: ') !!}
-    {!! Form::text('price', null, ['class' => 'form-control '.($errors->has('price') ? 'is-invalid' : '')]) !!}
-    @error('price') 
-       <div class="invalid-feedback">{{$message}}</div>
-    @enderror 
-</div>
- 
-<div class="form-group">
-    {!! Form::label('action_price', 'Product action price: ') !!}
-    {!! Form::text('action_price', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    {!! Form::label('recommended', 'Recommended: ') !!}
-    {!! Form::checkbox('recommended', '1') !!}
-</div>
-
-<div class="form-group">
     {!!Form::label('imgUpload', 'Product Image:') !!}
     {!!Form::file('imgUpload', ['class' => 'form-control']) !!}
 </div>

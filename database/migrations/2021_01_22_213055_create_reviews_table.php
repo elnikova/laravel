@@ -18,8 +18,6 @@ class CreateReviewsTable extends Migration
             $table->string('name');
             $table->text('review');
             $table->timestamps();
-            $table->unsignedBigInteger('product_id')->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('set null');
         });
     }
 

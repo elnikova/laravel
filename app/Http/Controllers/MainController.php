@@ -4,25 +4,36 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Permission;
 use App\Models\Product;
-use App\Models\Role;
-use App\Models\User;
+use App\Models\Slider;
 
 class MainController extends Controller
 {
     public function index()
     {
-        $title = 'Welcome';
-        $subtitle = '<em>to store</em>';
-        $products = Product::with('category')->latest()->get();//название метода в моделе
-    
-        return view('main.index', compact('title', 'products', 'subtitle', 'products'));
+
+        $products = Product::all();
+        $slider = Slider::all();
+
+        return view('main.index', compact('products', 'slider'));
+    }
+
+    public function store()
+    {
+        $products = Product::all();
+        $categories = Category::all();
+
+        return view('main.store', compact('products', 'categories'));
     }
 
     public function contacts()
     {
         return view('main.contacts');
+    }
+
+    public function info()
+    {
+        return view('main.info');
     }
 
     public function getContacts(Request $request)
@@ -32,10 +43,6 @@ class MainController extends Controller
             'email' => 'required|email',
             'message' => 'required|min:3',
         ]);
-
-       //dd($request->all());
-       //отправляем письмо
-       //return redirect('/contacts')->with('success', 'Thank!');
        return back()->with('success', 'Thank!');
     }
 

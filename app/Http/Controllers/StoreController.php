@@ -9,32 +9,27 @@ use App\Models\Review;
 
 class StoreController extends Controller
 {
-    public function sale()
+    public function store()
     {
-        $title = 'Sale';
-        // $products = Product::where('recommended', '=', 1)->where('price', '<', 200)->orWhere('category_id', '=', 35)->orderBy('name')->limit(5)->get();
-        //$products = Product::where('recommended', '=', 1)->first();
-        $products = Product::recommended()->paginate(5);
-        //$products = Product::where('recommended', '=', 1)->simplePaginate(5);
-        //dd($products);
-        return view('store.sale', compact('title', 'products'));
+        $category = Category::all(); // если равно то можно не писать
+        $products = Product::all();
+        view('main.store', compact('category', 'products'));
     }
 
     public function category($slug)
     {
         $category = Category::where('slug', '=', $slug)->firstOrFail(); // если равно то можно не писать
-        $products = Product::where('category_id', '=', $category->id)->paginate(5);
+        $products = Product::where('category_id', '=', $category->id)->paginate(6);
         
         return view('store.category', compact('category', 'products'));
     }
 
     public function product(Product $product)
     {
-        //$product = Product::where('slug', '=', $slug)->firstOrFail();
-        $reviews= Review::where('product_id', '=', $product->id)->get();
-
-        return view('store.product', compact('product', 'reviews'));
+        return view('store.product', compact('product'));
     }
+
+
 
     
         

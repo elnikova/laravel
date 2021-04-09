@@ -16,9 +16,4 @@ class Review extends Model
         //dd($value);
         return $value;
     }
-    
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
 }

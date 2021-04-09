@@ -41,9 +41,7 @@ class ProductController extends Controller
     {
         $request->validate([            
             'name'  => 'required|max:255',
-            'slug'  => 'required|unique:products|max:255',
-            'price' => 'required|numeric|min:1',
-            
+            'slug'  => 'required|unique:products|max:255'
         ]);
 
         Product::create($request->all());  
@@ -85,24 +83,11 @@ class ProductController extends Controller
     {
         $request->validate([            
             'name'  => 'required|max:255',
-            'slug'  => 'required|unique:products,slug,'.$id.'|max:255',
-            'price' => 'required|numeric|min:1',
-            
+            'slug'  => 'required|unique:products,slug,'.$id.'|max:255', 
         ]);
    
         $product = Product::findOrFail($id);
-
-        $product->name = $request->name;
-        $product->slug = $request->slug;
-        $product->description = $request->description;
-        $product->img = $request->img;
-        $product->price = $request->price;
-        $product->action_price = $request->action_price;
-        $product->category_id = $request->category_id;
-        $product->recommended = $request->recommended ? 1 : 0;
-        $product->save(); 
-        // $category->save();
-        //$product->update($request->all());  
+        $product->update($request->all());  
         return redirect('/admin/product');
     }
 
