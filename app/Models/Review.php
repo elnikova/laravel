@@ -13,7 +13,6 @@ class Review extends Model
     {
         $value = strtotime($value);
         $value = date('d.m.Y', $value);
-        //dd($value);
         return $value;
     }
 }

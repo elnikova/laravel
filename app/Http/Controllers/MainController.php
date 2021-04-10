@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\Slider;
+
 
 class MainController extends Controller
 {
@@ -13,9 +13,7 @@ class MainController extends Controller
     {
 
         $products = Product::all();
-        $slider = Slider::all();
-
-        return view('main.index', compact('products', 'slider'));
+        return view('main.index', compact('products'));
     }
 
     public function store()

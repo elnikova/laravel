@@ -11,6 +11,6 @@ class Role extends Model
 
     public function permissions()
     {
-        return $this->belongsToMany(Permission::class, 'roles_permissions'); // когда создаем миграции по алфавиту и в единственном числе, тогда можно не указывать таблицу
+        return $this->belongsToMany(Permission::class, 'roles_permissions'); 
     }
 }
